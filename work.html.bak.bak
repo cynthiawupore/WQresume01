@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RESUME-WUQIAN</title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <meta name="autor" content="cynthia娆墨旧染">
+    <meta name="robots" content="cynthia娆墨旧染">
+    <meta name="Generator" content="Atom">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta http-equiv="windows-Target" content="_top">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+
+    <!-- GLOBAL STYLE BEGIN  -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
+    <!-- GLOBAL STYLE END  -->
+
+    <!-- PAGE STYLE BEGIN -->
+    <link rel="stylesheet" href="css/index.css" media="screen" title="no title" charset="utf-8">
+    <!-- PAGE STYLE END -->
+
+  </head>
+  <body ng-app='ngrepeat'>
+
+
+  <!-- nav -->
+  <nav class="navbar navbar-default" role="navigation">
+     <div class="navbar-header">
+        <a class="navbar-brand" href="./index.html">Cynthia娆墨旧染</a>
+     </div>
+     <div>
+        <ul class="nav navbar-nav">
+           <li><a href="index.html">ABLOUT ME</a></li>
+           <li class="active"><a href="work.html">WORKS</a></li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                 MORE <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                 <li><a href="http://www.cnblogs.com/cynthia-wuqian/" target="_blank">BLOG</a></li>
+                 <li class="divider"></li>
+                 <li><a href="https://github.com/cynthiawupore" target="_blank">GITHUB</a></li>
+              </ul>
+           </li>
+        </ul>
+     </div>
+  </nav>
+  <!-- pc -->
+  <div class="container resume01">
+    <div class="table-responsive">
+     <table class="table table-striped table-bordered">
+       <thead>
+         <td>
+            #
+         </td>
+         <td>
+            PC端 的几个小例子
+         </td>
+         <td>
+            网页地址 ／ 源码地址
+         </td>
+       </thead>
+       <tbody ng-controller='ngrepeatCtr_pc'>
+
+            <tr ng-repeat="info_pc in resume_pc">
+              <td>{{info_pc.id}}</td>
+              <td>{{info_pc.key}}</td>
+              <td><a href="#" target="_blank">{{info_pc.value}}</a></td>
+            </tr>
+
+       </tbody>
+     </table>
+    </div>
+  </div>
+  <!-- mobile -->
+  <div class="container resume01">
+    <div class="table-responsive">
+     <table class="table table-striped table-bordered">
+       <thead>
+         <td>
+            #
+         </td>
+         <td>
+            移动端 的几个小例子
+         </td>
+         <td>
+            网页地址 ／ 源码地址
+         </td>
+       </thead>
+       <tbody ng-controller='ngrepeatCtr_mb'>
+
+         <tr ng-repeat="info_mb in resume_mb">
+           <td>{{info_mb.id}}</td>
+           <td>{{info_mb.key}}</td>
+           <td><a href='#' target="_blank">{{info_mb.value}}</a></td>
+         </tr>
+
+     </table>
+    </div>
+  </div>
+
+
+  </body>
+
+  <!-- GLOBAL JS BEGIN  -->
+  <script src="build/angular.min.js" charset="utf-8"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <!-- GLOBAL JS END  -->
+
+  <!-- PAGE JS BEGIN -->
+  <script src="js/index.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var app = angular.module('ngrepeat',[])
+    app.controller('ngrepeatCtr_pc',function($scope){
+        $scope.resume_pc = [
+          {
+            id : 1,
+            key : '平台活动页 -《乐翻天》',
+            value : 'http://mx175.com/index.php?m=achievement_new&c=index&a=turntable',
+          },
+          {
+            id : 2,
+            key : '平台活动页 -《拼图》',
+            value : 'http://mx175.com/index.php?m=event&c=index&a=puzzle',
+          },
+          {
+            id : 3,
+            key : '直播综合网站 -《波推》',
+            value : 'http://botui.tv/',
+          },
+          {
+            id : 4,
+            key : '购物网站 -《寻星买》',
+            value : 'http://xxm.mx175.com/',
+          },
+          {
+            id : 5,
+            key : 'h5动画 -《NFC后台》',
+            value : 'http://cynthiawupore.github.io/NFC1.1/',
+          },
+          {
+            id : 6,
+            key : 'h5动画 -《棋牌室引导页》',
+            value : 'http://cynthiawupore.github.io/chessRoom2/',
+          },
+          {
+            id : 7,
+            key : '响应式 -《后台》',
+            value : 'http://cynthiawupore.github.io/FIMSs/',
+          },
+        ];
+    });
+    app.controller('ngrepeatCtr_mb',function($scope){
+        $scope.resume_mb = [
+          {
+            id : 1,
+            key : 'H5小游戏网站 -《寻星游》',
+            value : '#',
+          },
+          {
+            id : 2,
+            key : '活动页 -《乐翻天》',
+            value : 'http://mx175.com/index.php?m=achievement_new&c=index&a=m_turntable',
+          },
+          {
+            id : 3,
+            key : '活动页 -《微信礼包领取》',
+            value : 'http://www.mx175.com/weiXin/',
+          },
+          {
+            id : 4,
+            key : '活动页 -《0903抗战小游戏》',
+            value : '#',
+          },
+          {
+            id : 5,
+            key : '活动页 -《游戏职称测试》',
+            value : 'http://h5.mx175.com/answer_test/',
+          },
+        ];
+      })
+  </script>
+  <!-- PAGE JS END -->
+</html>

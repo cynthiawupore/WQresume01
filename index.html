@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RESUME-WUQIAN</title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <meta name="autor" content="cynthia娆墨旧染">
+    <meta name="robots" content="cynthia娆墨旧染">
+    <meta name="Generator" content="Atom">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta http-equiv="windows-Target" content="_top">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+
+    <!-- GLOBAL STYLE BEGIN  -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
+    <!-- GLOBAL STYLE END  -->
+
+    <!-- PAGE STYLE BEGIN -->
+    <link rel="stylesheet" href="css/index.css" media="screen" title="no title" charset="utf-8">
+    <!-- PAGE STYLE END -->
+
+  </head>
+  <body ng-app='ngrepeat'>
+
+  <!-- 导航 -->
+  <nav class="navbar navbar-default" role="navigation">
+     <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Cynthia娆墨旧染</a>
+     </div>
+     <div>
+        <ul class="nav navbar-nav">
+           <li class="active"><a href="index.html">ABLOUT ME</a></li>
+           <li><a href="work.html">WORKS</a></li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                 MORE <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                 <li><a href="http://www.cnblogs.com/cynthia-wuqian/" target="_blank">BLOG</a></li>
+                 <li class="divider"></li>
+                 <li><a href="https://github.com/cynthiawupore" target="_blank">GITHUB</a></li>
+              </ul>
+           </li>
+        </ul>
+     </div>
+  </nav>
+  <!-- slide -->
+  <div id="myCarousel" class="carousel slide ">
+
+     <!-- 轮播（Carousel）项目 -->
+     <div class="carousel-inner">
+        <div class="item active">
+           <img src="img/slider_bg.png" alt="First slide" class="mauto">
+        </div>
+        <div class="item">
+           <img src="img/slider_bg2.png" alt="Second slide" class="mauto">
+        </div>
+        <div class="item">
+           <img src="img/slider_bg.png" alt="Third slide" class="mauto">
+        </div>
+     </div>
+     <!-- 轮播（Carousel）导航 -->
+     <a class="carousel-control left" href="#myCarousel"
+        data-slide="prev"></a>
+     <a class="carousel-control right" href="#myCarousel"
+        data-slide="next"></a>
+  </div>
+
+  <!-- en/zh -->
+  <div class="container resume01">
+    <div class="row btn text-right">
+        <a href="javascript:;" class="yingwen">英文</a>／<a href="javascript:;" class="zhongwen">中文</a>
+    </div>
+  </div>
+
+  <!-- resume en-->
+  <div class="carousel-inner" id="en_area" style="display:block">
+    <div class="container">
+      <div class="table-responsive">
+       <table class="table table-striped table-bordered">
+         <thead>
+           <tr>
+             <td>
+               #
+             </td>
+             <td>
+               RESUME KEY (EN)
+             </td>
+             <td>
+               VALUE
+             </td>
+           </tr>
+         </thead>
+         <tbody ng-controller='ngrepeatCtr_en'>
+
+           <tr ng-repeat="info_en in resume_en">
+             <td>{{info_en.id}}</td>
+             <td>{{info_en.key}}</td>
+             <td>{{info_en.value}}</td>
+           </tr>
+
+         </tbody>
+       </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- resume zh_cn -->
+  <div class="carousel-inner" id="zh_area" style="display:none">
+    <div class="container">
+      <div class="table-responsive">
+       <table class="table table-striped table-bordered">
+         <thead>
+           <tr>
+             <td>
+               #
+             </td>
+             <td>
+               RESUME KEY (zh_CN)
+             </td>
+             <td>
+               VALUE
+             </td>
+           </tr>
+         </thead>
+         <tbody>
+
+           <tbody ng-controller='ngrepeatCtr_zh'>
+
+             <tr ng-repeat="info_zh in resume_zh">
+               <td>{{info_zh.id}}</td>
+               <td>{{info_zh.key}}</td>
+               <td>{{info_zh.value}}</td>
+             </tr>
+
+           </tbody>
+
+         </tbody>
+       </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- motto -->
+  <div class="carousel-inner bg01">
+    <div class="container">
+      <div class="row resume01 resume02 text-center">
+        <h2>LOVE CODE && LOVE LIFE</h2>
+        <small>CopyRight ® cynthia娆墨旧染 / wuqian </small>
+        <h4>Each of your experiences  ,  your every decision  ,  deciding who you become  ...</h4>
+      </div>
+    </div>
+  </div>
+
+
+  </body>
+
+  <!-- GLOBAL JS BEGIN  -->
+  <script src="build/angular.min.js" charset="utf-8"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <!-- GLOBAL JS END  -->
+
+  <!-- PAGE JS BEGIN -->
+  <script src="js/index.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+    var app = angular.module('ngrepeat', []);
+    app.controller('ngrepeatCtr_en', function($scope, $http) {
+        $http.get("http://localhost:2016/json/index.json")
+        .success(function(data) {$scope.resume_en = data.resume_en;})
+        .error(function(){
+            console.log("an unexpected error ocurred resume_en")
+        })
+    });
+
+    app.controller('ngrepeatCtr_zh', function($scope, $http) {
+        $http.get("http://localhost:2016/json/index.json")
+        .success(function(data) {$scope.resume_zh = data.resume_zh;})
+        .error(function(){
+            console.log("an unexpected error ocurred resume_zh")
+        })
+    });
+
+    // en/zh
+    $('.zhongwen').click(function(){
+        $('#zh_area').css({
+          display:"block",
+        })
+        $('#en_area').css({
+          display:"none",
+        })
+    })
+    $('.yingwen').click(function(){
+        $('#zh_area').css({
+          display:"none",
+        })
+        $('#en_area').css({
+          display:"block",
+        })
+    })
+
+  </script>
+  <!-- PAGE JS END -->
+</html>

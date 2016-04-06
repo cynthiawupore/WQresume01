@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RESUME-WUQIAN</title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <meta name="autor" content="cynthia娆墨旧染">
+    <meta name="robots" content="cynthia娆墨旧染">
+    <meta name="Generator" content="Atom">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta http-equiv="windows-Target" content="_top">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+
+    <!-- GLOBAL STYLE BEGIN  -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
+    <!-- GLOBAL STYLE END  -->
+
+    <!-- PAGE STYLE BEGIN -->
+    <link rel="stylesheet" href="css/index.css" media="screen" title="no title" charset="utf-8">
+    <!-- PAGE STYLE END -->
+
+  </head>
+  <body ng-app='ngrepeat'>
+
+
+  <!-- nav -->
+  <nav class="navbar navbar-default" role="navigation">
+     <div class="navbar-header">
+        <a class="navbar-brand" href="./index.html">Cynthia娆墨旧染</a>
+     </div>
+     <div>
+        <ul class="nav navbar-nav">
+           <li><a href="index.html">ABLOUT ME</a></li>
+           <li class="active"><a href="work.html">WORKS</a></li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                 MORE <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                 <li><a href="http://www.cnblogs.com/cynthia-wuqian/" target="_blank">BLOG</a></li>
+                 <li class="divider"></li>
+                 <li><a href="https://github.com/cynthiawupore" target="_blank">GITHUB</a></li>
+              </ul>
+           </li>
+        </ul>
+     </div>
+  </nav>
+
+  <!-- pc/mobile -->
+  <div class="container resume01">
+    <div class="row btn text-right">
+        <a href="javascript:;" class="pc">pc端</a>／<a href="javascript:;" class="mobile">mobile端</a>
+    </div>
+  </div>
+
+  <!-- pc -->
+  <div class="container" id="pc" style="display:block">
+    <div class="table-responsive">
+     <table class="table table-striped table-bordered">
+       <thead>
+         <td>
+            #
+         </td>
+         <td>
+            PC端 的几个小例子
+         </td>
+         <td>
+            网页地址 ／ 源码地址
+         </td>
+       </thead>
+       <tbody ng-controller='ngrepeatCtr_pc'>
+
+            <tr ng-repeat="info_pc in resume_pc">
+              <td>{{info_pc.id}}</td>
+              <td>{{info_pc.key}}</td>
+              <td><a href="{{info_pc.value}}" target="_blank">{{info_pc.value}}</a></td>
+            </tr>
+
+       </tbody>
+     </table>
+    </div>
+  </div>
+
+  <!-- mobile -->
+  <div class="container" id="mobile" style="display:none">
+    <div class="table-responsive">
+     <table class="table table-striped table-bordered">
+       <thead>
+         <td>
+            #
+         </td>
+         <td>
+            移动端 的几个小例子
+         </td>
+         <td>
+            网页地址 ／ 源码地址
+         </td>
+       </thead>
+       <tbody ng-controller='ngrepeatCtr_mb'>
+
+         <tr ng-repeat="info_mb in resume_mb">
+           <td>{{info_mb.id}}</td>
+           <td>{{info_mb.key}}</td>
+           <td><a href='{{info_mb.value}}' target="_blank">{{info_mb.value}}</a></td>
+         </tr>
+
+     </table>
+    </div>
+  </div>
+
+
+  </body>
+
+  <!-- GLOBAL JS BEGIN  -->
+  <script src="build/angular.min.js" charset="utf-8"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <!-- GLOBAL JS END  -->
+
+  <!-- PAGE JS BEGIN -->
+  <script src="js/index.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+      var app = angular.module('ngrepeat', []);
+      app.controller('ngrepeatCtr_pc', function($scope, $http) {
+          $http.get("http://localhost:2016/json/work.json")
+          .success(function(data) {$scope.resume_pc = data.resume_pc;})
+          .error(function(){
+              console.log("an unexpected error ocurred resume_pc")
+          })
+      });
+
+      app.controller('ngrepeatCtr_mb', function($scope, $http) {
+          $http.get("http://localhost:2016/json/work.json")
+          .success(function(data) {$scope.resume_mb = data.resume_mb;})
+          .error(function(){
+              console.log("an unexpected error ocurred resume_mb")
+          })
+      });
+
+      // pc/mobile
+      $('.pc').click(function(){
+          $('#pc').css({
+            display:"block",
+          })
+          $('#mobile').css({
+            display:"none",
+          })
+      })
+      $('.mobile').click(function(){
+          $('#pc').css({
+            display:"none",
+          })
+          $('#mobile').css({
+            display:"block",
+          })
+      })
+
+  </script>
+  <!-- PAGE JS END -->
+</html>

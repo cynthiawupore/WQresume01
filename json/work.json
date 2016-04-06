@@ -1,0 +1,61 @@
+{
+    "resume_pc": [
+        {
+            "id": "1",
+            "key": "平台活动页 -《乐翻天》",
+            "value": "http://mx175.com/index.php?m=achievement_new&c=index&a=turntable"
+        },
+        {
+            "id": "2",
+            "key": "平台活动页 -《拼图》",
+            "value": "http://mx175.com/index.php?m=event&c=index&a=puzzle"
+        },
+        {
+            "id": "3",
+            "key": "直播综合网站 -《波推》",
+            "value": "http://botui.tv/"
+        },
+        {
+            "id": "4",
+            "key": "购物网站 -《寻星买》",
+            "value": "http://xxm.mx175.com/"
+        },
+        {
+            "id": "5",
+            "key": "h5动画 -《NFC后台》",
+            "value": "http://cynthiawupore.github.io/NFC1.1/"
+        },
+        {
+            "id": "6",
+            "key": "h5动画 -《棋牌室引导页》",
+            "value": "http://cynthiawupore.github.io/chessRoom2/"
+        }
+    ],
+    "resume_mb": [
+        {
+            "id": "1",
+            "key": "H5小游戏网站 -《寻星游》",
+            "value": "http://cynthiawupore.github.io/XXT-V1.1-mobile/"
+        },
+        {
+            "id": "2",
+            "key": "活动页 -《乐翻天》",
+            "value": "http://mx175.com/index.php?m=achievement_new&c=index&a=m_turntable"
+        },
+        {
+            "id": "3",
+            "key": "微信单页 -《微信礼包领取》",
+            "value": "http://www.mx175.com/weiXin/"
+        },
+        {
+            "id": "4",
+            "key": "微信单页 -《0903抗战小游戏》",
+            "value": "http://cynthiawupore.github.io/0903war1.0/"
+        },
+        {
+            "id": "5",
+            "key": "活动页 -《游戏职称测试》",
+            "value": "http://h5.mx175.com/answer_test/"
+        }
+    ]
+}

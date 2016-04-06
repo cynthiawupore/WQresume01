@@ -1,0 +1,34 @@
+body {
+  background: #f4f4f4;
+}
+
+.resume01 {
+  margin-top: 30px !important;
+}
+
+.bg01 {
+  background: #fff !important;
+}
+
+.mauto {
+  margin: 0 auto !important;
+}
+
+.resume02 {
+  margin-bottom: 30px !important;
+}
+
+.btn {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+/*# sourceMappingURL=index.css.map */
